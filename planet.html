@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="LOGO-SPACE.png">
+        <title>Space Explorer</title>
+        
+        <!--LINK ICON FONTAWESOME-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!--<link rel="stylesheet" href="se.css">--> 
+        <style>
+            .navbar{
+                padding-top: 2%;
+                margin-left: 2%; margin-right: 2%;
+             }
+            .nav-item{
+                font-family: 'Roboto';
+                font-weight: 600;
+                line-height: 36px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                padding-left: 25px;
+            }
+            .navbar-brand{
+                font-weight: 700;
+                letter-spacing: 3.2px;
+            }
+            .navbar .navbar-nav .active a, .navbar .navbar-nav .active a:focus, 
+            .navbar .navbar-nav .active a:hover {
+                color: #fff;
+            }
+            .btn{
+                margin-top: 105%;
+                font-size: 18px;
+                font-weight: bold;
+                letter-spacing: 2px;
+                text-transform: uppercase;
+                border-radius: 55px;
+                border: 1px solid #fff;
+                color: #fff;
+            }
+            .btn-default:hover{
+                background-color: #5D554e;
+                color: #fff;
+            }
+            .footer-text{
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 30px;
+                line-height: 24px;
+                color: rgba(255, 255, 255, 1);
+                padding-top: 50px; padding-bottom: 15px;
+            }
+            .modal-footer{
+              padding: 0;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <!--navbar-->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <a class="navbar-brand">
+            <img src="LOGO SPACE.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <b>SPACE EXPLORER</b>
+            </a>
+            <!-- navbar responsive -->      
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto"> <!--navbar posisi sebelah kanan (margin-left)-->
+                    <li class="nav-item"> 
+                        <a class="nav-link" href="space explorer.html">HOME</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            id="navbarDropdown" role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" 
+                            aria-expanded="false">
+                            Explore
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="tatasurya.html">TATA SURYA</a>
+                            <a class="dropdown-item" href="galaksi.html">GALAKSI</a>
+                            <a class="dropdown-item active" href="#planet">PLANET</a> <!--active di sini adalah kita berada di home dan text nya akan berbeda sendiri-->
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="space explorer.html #aboutus">About Us</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--MERKURIUS-->
+        <div class="container-fluid mb-5" style="background-image: url(images/merkurius.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc1">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal1"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Merkurius -->
+        <div class="modal fade" id="modalc1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET MERKURIUS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Ukuran dan lokasi: Merkurius adalah planet terkecil di Tata Surya dan terletak paling dekat dengan Matahari. Jarak rata-rata Merkurius dari Matahari adalah sekitar 36 juta mil (58 juta km).</li>
+                  <li>Suhu: Karena dekat dengan Matahari, suhu permukaan Merkurius sangat panas pada siang hari mencapai suhu sekitar 800 derajat Fahrenheit (430 derajat Celsius), tetapi sangat dingin pada malam hari mencapai suhu -290 derajat Fahrenheit (-180 derajat Celsius).</li>
+                  <li>Atmosfer: Merkurius memiliki atmosfer yang sangat tipis, dengan kepadatan yang jauh lebih rendah dari atmosfer Bumi. Karena itu, planet ini tidak memiliki efek rumah kaca dan suhu permukaannya bervariasi secara drastis.</li>
+                  <li>Satelit: Merkurius tidak memiliki satelit alami.</li>
+                  <li>Eksplorasi: NASA telah meluncurkan dua misi ke Merkurius, yaitu misi Mariner 10 pada tahun 1974-1975 dan misi Messenger pada tahun 2004-2015. Misi Messenger memberikan data paling rinci tentang planet ini, termasuk pengukuran suhu permukaan dan komposisi permukaan.</li>
+                  <li>Rotasi: Merkurius memiliki rotasi yang sangat lambat, dengan satu hari di Merkurius (periode rotasi) sekitar 59 hari Bumi. Ini membuat suhu permukaan yang sangat ekstrem karena satu sisi planet menghadap langsung ke Matahari untuk jangka waktu yang panjang.</li>
+                  <li>Komposisi: Merkurius terdiri terutama dari batuan padat dan memiliki inti besi yang besar dan padat. Permukaannya terdiri dari batuan basaltik dan memiliki banyak kawah karena terpukul oleh asteroid dan komet selama jutaan tahun.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Merkurius-->
+        <div class="modal fade" id="modal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Merkurius</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <iframe id="video1" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/3GGXuuYs__8" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                      gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+        
+        <!--VENUS-->
+        <div class="container-fluid mb-5" style="background-image: url(images/venus.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc2">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal2"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Venus -->
+        <div class="modal fade" id="modalc2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET VENUS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Ukuran dan lokasi: Venus adalah planet kedua dari Matahari dan hampir sama besar dengan Bumi. Jarak rata-rata Venus dari Matahari adalah sekitar 67 juta mil (108 juta km).</li>
+                  <li>Suhu: Venus adalah planet terpanas di Tata Surya, dengan suhu permukaan yang mencapai hingga 864 derajat Fahrenheit (462 derajat Celsius). Hal ini disebabkan oleh adanya efek rumah kaca yang sangat kuat di atmosfer Venus.</li>
+                  <li>Atmosfer: Venus memiliki atmosfer tebal yang terdiri terutama dari gas karbon dioksida dengan sedikit nitrogen dan belerang dioksida. Kepadatan atmosfer Venus sekitar 90 kali lebih besar dari Bumi, dan atmosfernya sangat tebal dan berawan sehingga menyebabkan efek rumah kaca yang kuat.</li>
+                  <li>Satelit: Venus tidak memiliki satelit alami.</li>
+                  <li>Eksplorasi: NASA telah meluncurkan beberapa misi ke Venus, termasuk Pioneer Venus pada tahun 1978-1992, Magellan pada tahun 1990-1994, dan Venus Express oleh Badan Antariksa Eropa pada tahun 2005-2014. Saat ini, NASA juga sedang mempersiapkan misi baru ke Venus yang disebut VERITAS dan DAVINCI+, yang dijadwalkan diluncurkan pada tahun 2028.</li>
+                  <li>Rotasi: Venus berputar sangat lambat, membutuhkan waktu sekitar 243 hari Bumi untuk satu kali rotasi, tetapi ia berputar dalam arah yang berlawanan dengan sebagian besar planet lain di Tata Surya.</li>
+                  <li>Komposisi: Venus terdiri terutama dari batuan padat dan memiliki inti besi yang besar dan padat seperti Bumi. Permukaannya terdiri dari dataran vulkanik dan gunung berapi, dan memiliki banyak kawah akibat benturan asteroid dan komet.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Venus-->
+        <div class="modal fade" id="modal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Venus</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <iframe id="video2" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/4sbhvdHZX6g" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                      gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!--BUMI-->
+        <div class="container-fluid mb-5" style="background-image: url(images/bumi.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc3">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal3"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Bumi -->
+        <div class="modal fade" id="modalc3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET BUMI</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Ukuran dan lokasi: Bumi adalah planet ketiga dari Matahari dan terbesar kelima dari delapan planet di Tata Surya. Jarak rata-rata Bumi dari Matahari adalah sekitar 93 juta mil (149,6 juta km).</li>
+                  <li>Suhu dan iklim: Suhu permukaan rata-rata Bumi sekitar 59 derajat Fahrenheit (15 derajat Celsius). Iklim Bumi sangat beragam dan dipengaruhi oleh faktor-faktor seperti lokasi geografis, topografi, dan aktivitas manusia.</li>
+                  <li>Atmosfer: Bumi memiliki atmosfer yang tebal dan kompleks, yang terdiri terutama dari gas nitrogen (78%) dan oksigen (21%) dengan jumlah kecil gas lain seperti argon, karbon dioksida, dan uap air.</li>
+                  <li>Satelit: Bumi memiliki satu satelit alami, yaitu Bulan.</li>
+                  <li>Eksplorasi: Manusia telah menjelajahi sebagian kecil dari permukaan Bumi, tetapi kita telah mengetahui lebih banyak tentang planet lain di Tata Surya. Namun, pengamatan dari satelit dan pesawat luar angkasa telah memberikan informasi yang berguna tentang Bumi dan lingkungan alaminya.</li>
+                  <li>Rotasi dan revolusi: Bumi membutuhkan waktu sekitar 24 jam untuk satu kali rotasi pada sumbunya, dan membutuhkan waktu sekitar 365 hari untuk mengorbit Matahari satu kali.</li>
+                  <li>Komposisi: Bumi terdiri terutama dari batuan padat dengan inti yang terdiri dari besi dan nikel cair, mantel yang terdiri dari batuan padat, dan kerak yang terdiri dari lempengan-lempengan batuan padat yang melayang di atas mantel.</li>
+                  <li>Kehidupan: Bumi adalah satu-satunya planet di Tata Surya yang diketahui memiliki kehidupan. Kehidupan di Bumi berkembang dalam berbagai bentuk dan meliputi mikroorganisme, tumbuhan, hewan, dan manusia.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Bumi-->
+        <div class="modal fade" id="modal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Bumi</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <iframe id="video3" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/A7KHuRwmWtE" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                      gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!--MARS-->
+        <div class="container-fluid mb-5" style="background-image: url(images/mars.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc4">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal4"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Mars -->
+        <div class="modal fade" id="modalc4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET MARS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Mars merupakan planet keempat dari Matahari dan berada di antara Bumi dan sabuk asteroid.</li>
+                  <li>Mars memiliki diameter sekitar setengah dari Bumi dan sekitar sepertiga dari massa Bumi.</li>
+                  <li>Mars memiliki waktu rotasi sekitar 24,6 jam dan waktu revolusi sekitar 687 hari.</li>
+                  <li>Mars memiliki atmosfer yang tipis, dengan tekanan permukaan hanya sekitar 1% dari tekanan permukaan Bumi.</li>
+                  <li>Permukaan Mars terdiri dari lembah, dataran tinggi, dan kawah. Dataran tinggi Mars dikenal sebagai Tharsis, dan terdiri dari gunung berapi raksasa seperti Olympus Mons, yang merupakan gunung tertinggi di Tata Surya.</li>
+                  <li>Mars memiliki dua satelit alami yang dikenal sebagai Phobos dan Deimos.</li>
+                  <li>Mars dikenal sebagai "planet merah" karena warna permukaannya yang merah bata. Warna ini disebabkan oleh kandungan besi oksida atau karbonat di batuan dan tanah Mars.</li>
+                  <li>Mars adalah tujuan utama bagi penjelajahan luar angkasa manusia, dengan misi-misi seperti Mars 2020 Perseverance dan ExoMars yang sedang berlangsung.</li>
+                  <li>Mars memiliki cuaca yang serupa dengan cuaca di Bumi, termasuk angin, awan, dan badai debu. Badai debu di Mars dapat menjadi sangat besar dan bertahan selama berbulan-bulan.</li>
+                  <li>Beberapa bukti menunjukkan bahwa air pernah ada di Mars, dan ada kemungkinan bahwa ada sumber air di bawah permukaan planet ini.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Mars-->
+        <div class="modal fade" id="modal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Mars</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <iframe id="video4" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/L-k_IqrVvFo" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                      gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!--JUPITER-->
+        <div class="container-fluid mb-5" style="background-image: url(images/jupiter.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc5">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal5"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Jupiter -->
+        <div class="modal fade" id="modalc5" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET JUPITER</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Jupiter adalah planet terbesar di Tata Surya dan memiliki diameter sekitar 11 kali lebih besar dari Bumi.</li>
+                  <li>Jupiter merupakan planet kelima dari Matahari dan memiliki jarak sekitar 778 juta kilometer dari Matahari.</li>
+                  <li>Jupiter memiliki lebih dari 80 satelit alami, termasuk empat satelit terbesarnya yaitu Io, Europa, Ganymede, dan Callisto.</li>
+                  <li>Waktu rotasi Jupiter sangat cepat, hanya sekitar 9,9 jam, sehingga membuat hari di Jupiter sangat pendek.</li>
+                  <li>Jupiter memiliki atmosfer yang sangat tebal, terdiri dari gas hidrogen dan helium. Atmosfer Jupiter juga memiliki banyak awan, termasuk awan merah raksasa yang dikenal sebagai Bintik Merah Besar.</li>
+                  <li>Bintik Merah Besar adalah badai raksasa yang terus berputar di atmosfer Jupiter selama lebih dari 300 tahun. Bintik Merah Besar lebih besar dari ukuran Bumi.</li>
+                  <li>Jupiter memiliki medan magnetik yang sangat kuat, lebih kuat dari medan magnetik Bumi. Medan magnetik Jupiter juga melindungi planet dari angin matahari yang berbahaya.</li>
+                  <li>Jupiter adalah planet yang sangat terang dan dapat dengan mudah diamati dengan mata telanjang di malam hari. Warna coklat kemerahan di permukaan Jupiter disebabkan oleh kandungan amonia dan fosfor di awan atmosfer.</li>
+                  <li>Jupiter memiliki banyak lingkaran partikel debu yang disebut sebagai cincin, namun tidak sejelas cincin Saturnus.</li>
+                  <li>Jupiter telah menjadi tujuan misi antariksa yang paling banyak dieksplorasi, termasuk misi Galileo dan Juno yang diluncurkan oleh NASA.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Jupiter-->
+        <div class="modal fade" id="modal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Jupiter</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <iframe id="video5" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/xuu7IlH8hFs" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                      gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!--SATURNUS-->
+        <div class="container-fluid mb-5" style="background-image: url(images/saturnus.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc6">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                  <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal6"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Saturnus -->
+        <div class="modal fade" id="modalc6" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET SATURNUS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Saturnus adalah planet keenam dari Matahari dan terletak sekitar 1,4 miliar kilometer dari Matahari.</li>
+                  <li>Saturnus merupakan planet gas raksasa dengan diameter sekitar 9 kali lebih besar dari Bumi.</li>
+                  <li>Saturnus memiliki cincin yang terkenal dan merupakan yang terbesar dari semua planet di Tata Surya. Cincin Saturnus terdiri dari partikel es dan batuan kecil.</li>
+                  <li>Saturnus memiliki lebih dari 80 satelit alami yang telah diketahui, termasuk satelit terbesarnya yaitu Titan.</li>
+                  <li>Waktu rotasi Saturnus sangat cepat, hanya memerlukan waktu 10,7 jam untuk menyelesaikan satu rotasi penuh.</li>
+                  <li>Atmosfer Saturnus terdiri dari gas hidrogen dan helium, serta beberapa elemen lainnya seperti amonia, metana, dan air.</li>
+                  <li>Komposisi: Merkurius terdiri terutama dari batuan padat dan memiliki inti besi yang besar dan padat. Permukaannya terdiri dari batuan basaltik dan memiliki banyak kawah karena terpukul oleh asteroid dan komet selama jutaan tahun.</li>
+                  <li>Titan, satelit terbesar Saturnus, adalah satu-satunya satelit di Tata Surya yang memiliki atmosfer yang tebal dan berisi gas metana.</li>
+                  <li>Selain itu, Saturnus juga memiliki satelit yang menarik perhatian ilmuwan, yaitu Enceladus. Satelit ini memiliki geysir air yang tersembunyi di bawah permukaannya.</li>
+                  <li>Saturnus sering dianggap sebagai salah satu planet paling indah di Tata Surya karena cincinnya yang indah dan spektakuler. Planet ini juga sering dijuluki sebagai "planet bintang" karena cahayanya yang cerah dan gemerlap.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Saturnus-->
+        <div class="modal fade" id="modal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Saturnus</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                  </div>
+
+                  <div class="modal-body">
+                      <iframe id="video6" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/XhPXNbabnew" 
+                      frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                      gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+        <!--URANUS-->
+        <div class="container-fluid mb-5" style="background-image: url(images/uranus.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc7">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal7"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Uranus -->
+        <div class="modal fade" id="modalc7" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET URANUS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Uranus adalah planet ketujuh dari Matahari dan terletak sekitar 2,9 miliar kilometer dari Matahari.</li>
+                  <li>Uranus adalah planet gas raksasa dengan diameter sekitar 4 kali lebih besar dari Bumi.</li>
+                  <li>Uranus memiliki kemiringan poros yang sangat ekstrem, sekitar 98 derajat, yang membuatnya tampak seperti planet yang terguling-guling di Tata Surya.</li>
+                  <li>Uranus memiliki cincin seperti Saturnus, meskipun cincinnya jauh lebih samar dan sulit terlihat.</li>
+                  <li>Uranus memiliki 27 satelit alami yang telah diketahui, termasuk satelit terbesarnya yaitu Miranda.</li>
+                  <li>Atmosfer Uranus terdiri dari gas hidrogen dan helium, serta beberapa elemen lainnya seperti metana.</li>
+                  <li>Uranus memiliki medan magnetik yang lemah, dan tidak seperti Jupiter dan Saturnus, medan magnetiknya tidak cukup kuat untuk melindungi planet dari partikel matahari dan radiasi berbahaya.</li>
+                  <li>Uranus memiliki salah satu musim yang paling aneh di Tata Surya karena kemiringan porosnya yang sangat ekstrem. Saat Uranus berada di titik terdekat dengan Matahari, satu kutubnya mengalami musim panas yang sangat panas, sementara kutub lainnya mengalami musim dingin yang sangat dingin.</li>
+                  <li>Uranus adalah planet pertama yang ditemukan dengan menggunakan teleskop, oleh William Herschel pada tahun 1781.</li>
+                  <li>Uranus dinamai dari dewa Yunani Uranus, yang merupakan dewa langit dan ayah dari Kronos (Saturnus) dan Zeus (Jupiter).</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Uranus-->
+        <div class="modal fade" id="modal7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Uranus</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <iframe id="video7" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/a7eHnxEa-Y8" 
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                        gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--NEPTUNUS-->
+        <div class="container-fluid" style="background-image: url(images/neptunus.jpg);
+            background-position:center; width: 100%; background-size: cover; -webkit-background-size: cover;
+            height: 100vh;">
+            <div class="row">
+                <div class="col-sm-6 text-center">
+                    <div class="caption-image">
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalc8">PENJELASAN</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 text-center">
+                    <button type="button" class="btn btn-default video-btn" data-toggle="modal" data-target="#modal8"><i class="fa-solid fa-play" style="color: #ffffff;"></i> LIHAT VIDEO</button>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Caption Neptunus -->
+        <div class="modal fade" id="modalc8" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">PLANET NEPTUNUS</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <ol>
+                  <li>Neptunus adalah planet terjauh dari Matahari di Tata Surya, dan memiliki orbit yang sangat elips yang berbeda dengan planet lainnya.</li>
+                  <li>Neptunus terkenal karena warnanya yang biru, yang disebabkan oleh adanya atmosfer yang kaya akan metana.</li>
+                  <li>Waktu satu hari di Neptunus sekitar 16,1 jam, sementara waktu satu tahun di Neptunus sama dengan sekitar 165 tahun Bumi.</li>
+                  <li>Neptunus memiliki medan magnetik yang sangat kuat, sekitar 27 kali lebih kuat dari medan magnetik Bumi.</li>
+                  <li>Salah satu satelit alami Neptunus yang paling menarik adalah Triton, yang memiliki permukaan yang penuh dengan gunung berapi yang masih aktif, serta kawah dan cekungan yang dalam.</li>
+                  <li>Neptunus juga memiliki beberapa lingkaran atau cincin, meskipun cincin-cincin ini jauh lebih samar dan kurang dikenal daripada cincin-cincin Saturnus.</li>
+                  <li>Neptunus memiliki beberapa angin tercepat di Tata Surya, dengan kecepatan angin mencapai lebih dari 2.100 kilometer per jam.</li>
+                  <li>Seperti Uranus, Neptunus juga merupakan planet gas raksasa yang sebagian besar terdiri dari hidrogen dan helium, dengan sedikit kandungan air, amonia, dan metana.</li>
+                  <li>Pada tahun 2011, Neptunus menyelesaikan satu kali orbit penuh sejak ditemukan oleh ilmuwan pada tahun 1846.</li>
+                  <li>Saat ini, belum ada wahana antariksa manusia yang pernah mengunjungi Neptunus. Voyager 2 adalah satu-satunya wahana antariksa yang pernah melewati planet ini pada tahun 1989 dan mengumpulkan data penting tentang planet tersebut.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Modal Video Neptunus-->
+        <div class="modal fade" id="modal8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="myModalLabel">Perjalanan menuju Neptunus</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                        <iframe id="video8" class="embed-responsive-item" width="100%" height="385" src="https://www.youtube.com/embed/vfOH9UBiv14" 
+                        frameborder="0" allow="accelerometer; autoplay; encrypted-media; 
+                        gyroscope; picture-in-picture;" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- JavaScript/jQuery code to pause the video when the modal is closed -->
+        <script>
+          window.onload = function() {
+            w$('#modal1, #modal2, #modal3, #modal4, #modal5, #modal6, #modal7, #modal8').on('hidden.bs.modal', function (e) {
+            // Mendapatkan elemen iframe video
+            var iframe1 = $(this).find('#video1')[0];
+            var iframe2 = $(this).find('#video2')[0];
+            var iframe3 = $(this).find('#video3')[0];
+            var iframe4 = $(this).find('#video4')[0];
+            var iframe5 = $(this).find('#video5')[0];
+            var iframe6 = $(this).find('#video6')[0];
+            var iframe7 = $(this).find('#video7')[0];
+            var iframe8 = $(this).find('#video8')[0];
+            // Menghentikan video dengan menetapkan src atribut ke string kosong
+            iframe1.src = '';
+            iframe2.src = '';
+            iframe3.src = '';
+            iframe4.src = '';
+            iframe5.src = '';
+            iframe6.src = '';
+            iframe7.src = '';
+            iframe8.src = '';
+            });
+          }
+            
+        </script>
+
+        <!--FOOTER-->
+        <div class="container-fluid mt-5 pb-5" style="background: #141212;">
+            <footer class="text-center text-with pb-5" style="box-sizing: border-box; border-bottom: 1px solid #FFFFFF;">
+              <div class="footer-text">
+                <p>OUR SOCIAL MEDIA</p>
+              </div>
+              <section class="text-center">
+                <!-- Facebook -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                <!-- Twitter -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+                <!-- Instagram -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                <!-- Youtube -->
+                <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-youtube"></i></a>
+              </section>
+            </footer>
+        </div>
+
+        
+        <script src="js/jquery-3.6.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="LOGO SPACE.png">
+        <title>Space Explorer</title>
+        
+        <!--LINK ICON FONTAWESOME-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css">
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!--<link rel="stylesheet" href="se.css">-->  
+        <style>
+          .navbar{
+            padding-top: 2%;
+            margin-left: 2%; margin-right: 2%;
+          }
+          .nav-item{
+            font-family: 'Roboto';
+            font-weight: 600;
+            line-height: 36px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            padding-left: 25px;
+          }
+          .navbar-brand{
+            font-weight: 700;
+            letter-spacing: 3.2px;
+          }
+          .navbar .navbar-nav .active a, .navbar .navbar-nav .active a:focus, 
+          .navbar .navbar-nav .active a:hover {
+            color: #fff;
+          }
+          .carousel-item{
+              height: 100vh;
+              min-height: 300px;
+              background: no-repeat center center scroll;
+              -webkit-background-size: cover;
+              background-size: cover;
+          } 
+          .carousel-caption{
+              top: 50%;
+              transform: translateY(-40%);
+              width: 50%;
+          }
+          .carousel-caption h5{
+              font-size: 60px;
+              font-weight: bold;
+              text-transform: uppercase;
+              letter-spacing: 5.2px;
+              margin-top: 25px;
+              text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          }
+          .carousel-caption p{
+            font-family: 'Poppins';
+            width: 60%;
+            margin: auto;
+            font-size: 24px;
+            line-height: 1.9;
+          }
+          .carousel-caption .btn{
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+            background: #5367F8;
+            padding: 10px 30px;
+            display: inline-table;
+            border-radius: 55px;
+            color: #fff;
+            margin-top: 15px;
+          }
+          .carousel-caption .btn-default:hover{
+            background-color: #141212;
+            border: 1px solid #000;
+          }
+          .container{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 40px;
+            line-height: 52px;
+            text-align: center;
+            margin-top: 3%;
+            letter-spacing: 4px;
+          }
+          .container-fluid{
+            background-image: url(images/section.jpg);
+            background-position:center;
+          }
+          .rounded-circle{
+            height: 300px;
+            width: 300px;
+            left: 43.046875px;
+            top: 0px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid #FFFFFF;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+          }
+          .rounded-circle-1{
+            border: #fff; 
+            height: 231px; 
+            width: 231px;
+            left: 34.95px; 
+            top: 34.41px;
+            background-image: url(images/tata-surya12x12.jpg);
+            background-size: cover;
+            border-radius: 150px;
+            border: 2px solid #FFFFFF; 
+            opacity: 0.8; 
+            justify-content: center;
+            display: flex;
+            align-items: center;
+          }
+          .rounded-circle-2{
+            border: #fff; 
+            height: 231px; 
+            width: 231px;
+            left: 34.95px; 
+            top: 34.41px;
+            background-image: url(images/galaksi.jpg);
+            background-size: cover;
+            background-position: center;
+            border-radius: 150px;
+            border: 2px solid #FFFFFF; 
+            opacity: 0.8; 
+            justify-content: center;
+            display: flex;
+            align-items: center;
+          }
+          .rounded-circle-3{
+            border: #fff; 
+            height: 231px; 
+            width: 231px;
+            left: 34.95px; 
+            top: 34.41px;
+            background-image: url(images/planet.jpg);
+            background-position: center;
+            background-size: cover;
+            border-radius: 150px;
+            border: 2px solid #FFFFFF; 
+            opacity: 0.8; 
+            justify-content: center;
+            display: flex;
+            align-items: center;
+          }
+          .title-circle a{
+            font-family: 'Poppins';
+            font-weight: 600;
+            font-size: 23.2px;
+            line-height: 28px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          }
+          ion-icon {
+            color:#fff;
+            height: 40px;
+            width: 40px;
+            left: 320px;
+            top: 130px;
+            margin-bottom: 50px;
+            position: absolute;
+          }
+          .about{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 40px;
+            line-height: 52px;
+            align-items: center;
+            text-align: center;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            margin-top: 5%;
+          }
+          .caption-text{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 27px;
+            line-height: 39px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 1.5px;
+            color: #FFFFFF;
+            margin-top: 40px;
+          }
+          .footer-text{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 30px;
+            line-height: 24px;
+            color: rgba(255, 255, 255, 1);
+            padding-top: 50px; padding-bottom: 15px;
+          }
+          .btn{
+            border-radius: 55px;
+          }
+          @media (max-width: 1300px){
+            .carousel-caption h5{
+              font-size: 50px;
+              letter-spacing: 5.2px;
+              margin-top: 25px;
+            }
+            .carousel-caption p{
+              font-size: 14px;
+            }
+            .carousel-caption btn{
+              font-size: 14px;
+              margin-top: 5px;
+            }
+            .caption-text{
+              font-size: 23px;
+            }
+            .footer-text{
+              font-size: 23px;
+            }
+          }
+          @media screen and (max-width: 992px) {
+            .container {
+              width: 50%;
+            }
+            .carousel-caption{
+              top: 50%;
+              transform: translateY(-40%);
+              display: none;
+            }
+            .carousel-item{
+              height: 60%;
+            }
+            .carousel-control-prev .carousel-control-next{
+              height: 50%;
+            }
+          }
+          @media screen and (max-width:600px){
+            .carousel-caption{
+              display: none;
+            }
+            .container{
+              width: 100%;
+            }
+            .caption-text{
+              font-size: 17px;
+            }
+            .footer-text{
+              font-size: 20px;
+            }
+          }
+        </style>
+    </head>
+
+    <body>
+        <!-- home -->
+        <!-- navbar -->
+        <!-- Logo and text -->
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+            <a class="navbar-brand">
+            <img src="LOGO SPACE.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <b>SPACE EXPLORER</b>
+            </a>
+            <!-- navbar responsive -->      
+            <button class="navbar-toggler" 
+                    type="button" 
+                    data-toggle="collapse" 
+                    data-target="#navbarSupportedContent" 
+                    aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto"> <!--navbar posisi sebelah kanan (margin-left)-->
+                    <li class="nav-item active"> <!--active di sini adalah kita berada di home dan text nya akan berbeda sendiri-->
+                        <a class="nav-link" href="space explorer.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            id="navbarDropdown" role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true" 
+                            aria-expanded="false">
+                            EXPLORE
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="tatasurya.html">Tata Surya</a>
+                          <a class="dropdown-item" href="galaksi.html">Galaksi</a>
+                          <a class="dropdown-item" href="planet.html">Planet</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#aboutus">About Us</a>
+                    </li>
+                  <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--slide carousel-->
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="images/c1.jpg" alt="First slide">
+                <div class="carousel-caption d-none d-md-block ml-auto mr-auto">
+                    <h5>SPACE EXPLORER</h5>
+                    <p>Let's Take Your Journey</p>
+                    <hr style=" width: 220px; height: 1px; 
+                    border-width: 1px; margin-top: 15px; margin-bottom: 50px;
+                    background-color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                    <button type="button" class="btn btn-default" onclick="window.location.href = '#explore';">STAR THE JOURNEY</button>
+                  </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/c2.jpg" alt="Second slide">
+                <div class="carousel-caption d-none d-md-block ml-auto mr-auto">
+                  <h5>SPACE EXPLORER</h5>
+                  <p>Let's Take Your Journey</p>
+                  <hr style=" width: 220px; height: 1px; 
+                    border-width: 1px; margin-top: 15px; margin-bottom: 50px;
+                    background-color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                  <button type="button" class="btn btn-default" onclick="window.location.href = '#explore';">START THE JOURNEY</button>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="images/c3.jpg" alt="Third slide">
+                <div class="carousel-caption d-none d-md-block ml-auto mr-auto">
+                  <h5>SPACE EXPLORER</h5>
+                  <p>Let's Take Your Journey</p>
+                  <hr style=" width: 220px; height: 1px; 
+                    border-width: 1px; margin-top: 15px; margin-bottom: 50px;
+                    background-color: #FFFFFF; text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);">
+                  <button type="button" class="btn btn-default" onclick="window.location.href = '#explore';">START THE JOURNEY</button>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+          </div>
+          
+        <!--EXPLORE-->
+        <div class="container" id="explore">
+          <h1> EXPLORE </h1>
+          <hr style=" width: 108px; height: 3px; 
+                      border-width: 3px; margin-top: 35px;
+                      background-color: rgba(144, 112, 47, 1);"> <!--garis bawah-->
+        </div>
+        <div class="container-fluid mt-4 py-5"> <!--MAKE CONTAINER BACKGROUND CIRCLE-->
+          <!-- CIRCLE WITH ROW TO POSITION -->
+          <div class="row my-5">
+            <div class="col-sm-4 ">
+              <div class="rounded-circle my-auto mx-auto"> <!--LINGKARAN LUAR-->
+                <div class="rounded-circle-1"> <!-- LINGKARAN DALAM -->
+                  <div class="title-circle"> 
+                      <h5><a href="tatasurya.html">Tata surya</a>
+                         <ion-icon name="arrow-forward-circle"></ion-icon>
+                      </h5>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-4">
+              <div class="rounded-circle my-auto mx-auto"> <!--LINGKARAN LUAR-->
+                <div class="rounded-circle-2"> <!-- LINGKARAN DALAM -->
+                <div class="title-circle"> 
+                      <h5><a href="galaksi.html">galaksi</a></h5>
+                      <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </div>
+              </div> 
+            </div>
+
+            <div class="col-sm-4">
+              <div class="rounded-circle my-auto mx-auto"> <!--LINGKARAN LUAR-->
+                <div class="rounded-circle-3"> <!-- LINGKARAN DALAM -->
+                <div class="title-circle"> 
+                      <h5><a href="planet.html">planet</a></h5>
+                      <ion-icon name="arrow-forward-circle"></ion-icon>
+                    </div>
+                </div>
+              </div> 
+            </div>
+          </div>
+        </div>
+        
+        <!--ABOUT US-->
+        <div class="container-fluid mt-5" id="aboutus" style="background: rgba(25, 37, 46, 1); margin-top: 30px;">
+          <div class="about">
+            <h1><br> ABOUT US </h1>
+            <hr style=" width: 108px; height: 3px; 
+                      border-width: 3px; margin-top: 35px;
+                      background-color: rgba(144, 112, 47, 1);"> <!--garis bawah-->
+          </div>
+          <div class="row pb-5 pr-3">
+            <div class="col-sm-4 pl-5">
+              <img src="images/LOGO SPACE.png" class="img-fluid rounded float-left" 
+              alt="Responsive image" style="width: 350px; height: 400px;">
+            </div>
+            <div class="col-sm-8 pr-2">
+              <div class="caption-text">
+                <p><br>Space Explorer hadir untuk memberikan kesempatan untuk menjelajah dunia luar angkasa yang belum Anda ketahui. 
+                Membantu Anda mengenal berbagai planet, satelit, galaksi, dan tata surya kita. 
+                Tersedia berbagai dokumentasi foto maupun video yang bersumber dari NASA yang dapat Anda lihat pada art spaces, 
+                serta informasi menarik yang dapat menghibur Anda yang tercantum pada fun fact. 
+              </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!--FOOTER-->
+        <div class="container-fluid mt-5 pb-5" style="background: #141212;">
+          <footer class="text-center text-with pb-5" style="box-sizing: border-box; border-bottom: 1px solid #FFFFFF;">
+            <div class="footer-text">
+              <p>OUR SOCIAL MEDIA</p>
+            </div>
+            <section class="text-center">
+              <!-- Facebook -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+              <!-- Twitter -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+              <!-- Instagram -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+              <!-- Youtube -->
+              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-youtube"></i></a>
+            </section>
+          </footer>
+        </div>
+
+        <script src="js/jquery-3.6.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    </body>
+</html>
